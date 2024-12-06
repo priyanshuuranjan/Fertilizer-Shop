@@ -1,8 +1,10 @@
+import Header from "./components/ui/Header";
+
 const App = () => {
   return (
-    <>
-      <h1>Setup Done</h1>
-    </>
+    <main>
+      <Header/>
+    </main>
   );
 };
 
