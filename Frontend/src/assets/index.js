@@ -3,5 +3,6 @@ import cartImg from "./cart.png";
 import paymentLogo from "./paymentLogo.png";
 import googleLogo from "./googleLogo.png";
 import githubLogo from "./githubLogo.png";
+import hero from "./hero.png";
 
-export { logo, cartImg, paymentLogo, googleLogo, githubLogo };
+export { logo, cartImg, paymentLogo, googleLogo, githubLogo,hero };

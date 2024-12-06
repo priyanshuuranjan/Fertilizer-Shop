@@ -1,11 +1,11 @@
-import Banner from "./components/ui/Banner";
 import Header from "./components/ui/Header";
+import Hero from "./components/ui/Hero";
 
 const App = () => {
   return (
-    <div className="font-bodyFont">
+    <div className="font-bodyFont max-w-[70%] mx-auto">
       <Header />
-      <Banner/>
+      <Hero />
     </div>
   );
 };

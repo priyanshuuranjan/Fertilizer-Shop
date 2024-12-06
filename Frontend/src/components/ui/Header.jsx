@@ -5,7 +5,7 @@ const Header = () => {
     <div className="w-full h-20 bg-white  border-b-[1px] border-b-gray-800 font-titleFont">
       <div className="max-w-screen-xl h-full mx-auto flex items-center justify-between px-4">
         <div>
-          <h3 className="w-29 text-black font-bold"> Kumar fertilizer</h3>
+          <h3 className="w-29 text-gray-700 font-bold text-4xl"> Kumar fertilizer</h3>
           {/* <img src={logo} className="w-16 text-black font-bold"/>  */}
         </div>
         <div className="flex items-center gap-8">
