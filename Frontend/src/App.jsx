@@ -1,10 +1,12 @@
+import Banner from "./components/ui/Banner";
 import Header from "./components/ui/Header";
 
 const App = () => {
   return (
-    <main>
-      <Header/>
-    </main>
+    <div className="font-bodyFont">
+      <Header />
+      <Banner/>
+    </div>
   );
 };
 
