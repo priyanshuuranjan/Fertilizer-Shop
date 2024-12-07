@@ -8,6 +8,9 @@ import {
   RouterProvider,
   ScrollRestoration,
 } from "react-router-dom";
+import NotFound from "./components/ui/NotFound";
+import Contact from "./components/ui/Contact";
+import Order from "./components/ui/Order";
 const Layout = () => {
   return (
     <div>
@@ -30,6 +33,18 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/order",
+        element: <Order />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

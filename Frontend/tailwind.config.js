@@ -11,6 +11,7 @@ export default {
         skyText: "#38bdf8",
         redText: "#ef4444",
         whiteText: "#ffffff",
+        darkText: '#1a202c'
       },
     },
   },
