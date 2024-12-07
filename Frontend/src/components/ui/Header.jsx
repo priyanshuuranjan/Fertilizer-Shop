@@ -1,11 +1,14 @@
-import { cartImg } from "../../assets/index";
 import { logo } from "../../assets/index";
+import { FiShoppingBag } from "react-icons/fi";
 const Header = () => {
   return (
-    <div className="w-full h-20 bg-white  border-b-[1px] border-b-gray-800 font-titleFont">
+    <div className="w-full h-20 bg-white  border-b-[1px] border-b-gray-800 font-titleFont top-0 z-50">
       <div className="max-w-screen-xl h-full mx-auto flex items-center justify-between px-4">
         <div>
-          <h3 className="w-29 text-gray-700 font-bold text-4xl"> Kumar fertilizer</h3>
+          <h3 className="w-29 text-gray-700 font-bold text-4xl">
+            {" "}
+            Kumar fertilizer
+          </h3>
           {/* <img src={logo} className="w-16 text-black font-bold"/>  */}
         </div>
         <div className="flex items-center gap-8">
@@ -26,9 +29,9 @@ const Header = () => {
               Contact
             </li>
           </ul>
-          <div className="relative">
-            <img className="w-6" src={cartImg} alt="cartImg" />
-            <span className="absolute w-6 top-2 left-0 text-sm flex items-center justify-center font-semibold font-titleFont">
+          <div className="relative block">
+            <FiShoppingBag className="hover:text-skyText duration-200 cursor-pointer" />
+            <span className="inline-flex items-center justify-center bg-redText text-whiteText absolute -top-1 -right-2 text-[9px] rounded-full w-4 h-4">
               0
             </span>
           </div>

@@ -28,16 +28,18 @@ const SocialLinks = () => {
 const Footer = () => {
   return (
     <div className="bg-black text-[#949494] py-20">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 gap-4">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 gap-4">
         <div className="flex flex-col gap-7">
           <img className="w-32" src={logo} alt="logo" />
-          <p className="text-white text-sm tracking-wide">© 2024 Kumar-Fertilizer All rights reserved.😉</p>
+          <p className="text-white text-sm tracking-wide">
+            © 2024 Kumar-Fertilizer All rights reserved.😉
+          </p>
           <img className="w-56" src={paymentLogo} alt="paymentLogo" />
 
           <SocialLinks />
         </div>
         <div>
-          <h2 className="text-2xl font-semibold text-white mb-4">Locate us</h2>
+          <h2 className="text-2xl font-semibold text-white mb-6">Locate us</h2>
           <div className="text-base flex flex-col gap-2">
             <p>B45 Building, Sapahi</p>
             <p>Mobile: +91 6299908913</p>

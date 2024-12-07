@@ -7,6 +7,11 @@ export default {
         bodyFont: "poppins",
         titleFont: "Nunito sans",
       },
+      colors: {
+        skyText: "#38bdf8",
+        redText: "#ef4444",
+        whiteText: "#ffffff",
+      },
     },
   },
   plugins: [],
