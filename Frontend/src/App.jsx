@@ -1,11 +1,13 @@
+import Footer from "./components/ui/Footer";
 import Header from "./components/ui/Header";
 import Hero from "./components/ui/Hero";
 
 const App = () => {
   return (
-    <div className="font-bodyFont max-w-[70%] mx-auto">
+    <div className="font-bodyFont ">
       <Header />
       <Hero />
+     <Footer/>
     </div>
   );
 };
