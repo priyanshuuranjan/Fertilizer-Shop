@@ -12,6 +12,12 @@ import NotFound from "./components/ui/NotFound";
 import Contact from "./components/ui/Contact";
 import Order from "./components/ui/Order";
 import Services from "./components/ui/Services";
+import Fertilizer from "./components/pages/Fertilizer";
+import Vegetable from "./components/pages/Vegetable";
+import Pesticides from "./components/pages/Pesticides";
+import Herbicides from "./components/pages/Herbicides";
+import PlantNutrition from "./components/pages/PlantNutrition";
+import Equipment from "./components/pages/Equipment";
 
 const Layout = () => {
   return (
@@ -36,6 +42,30 @@ const router = createBrowserRouter([
             <Services />
           </>
         ),
+      },
+      {
+        path: "/fertilizer",
+        element: <Fertilizer />,
+      },
+      {
+        path: "/seeds",
+        element: <Vegetable />,
+      },
+      {
+        path: "/pesticides",
+        element: <Pesticides />,
+      },
+      {
+        path: "/herbicides",
+        element: <Herbicides />,
+      },
+      {
+        path: "/equipment",
+        element: <Equipment />,
+      },
+      {
+        path: "/nutrition",
+        element: <PlantNutrition />,
       },
 
       {

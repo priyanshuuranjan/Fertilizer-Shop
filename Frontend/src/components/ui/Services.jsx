@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const Services = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
       name: "Fertilizer",
@@ -8,7 +12,7 @@ const Services = () => {
         "Enhance soil fertility with our premium fertilizers, designed to boost plant growth.",
     },
     {
-      name: "Vegetable Seeds",
+      name: "Seeds",
       image:
         "https://img.freepik.com/premium-photo/microgreens-microgreens-sprouted-chard-seeds-white-background-home-seed-germination_410516-3872.jpg?ga=GA1.1.906105498.1710994680&semt=ais_hybrid",
       description:
@@ -36,13 +40,17 @@ const Services = () => {
         "High-quality farming tools and equipment for all your agricultural needs.",
     },
     {
-      name: "Plant Nutrition",
+      name: "Nutrition",
       image:
         "https://img.freepik.com/premium-photo/close-up-hand-watering-plant-against-black-background_1048944-30688009.jpg?ga=GA1.1.906105498.1710994680&semt=ais_hybrid",
       description:
         "Ensure healthy plant growth with our plant nutrition solutions and supplements.",
     },
   ];
+
+  const navigateToProduct = (serviceName) => {
+    navigate(`/${serviceName.toLowerCase()}`);
+  };
 
   return (
     <div className="w-full py-10 bg-slate-200">
@@ -61,6 +69,7 @@ const Services = () => {
           <div
             key={index}
             className="bg-white rounded-lg shadow-md group hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+            onClick={() => navigateToProduct(service.name)}
           >
             <div className="flex items-center justify-center h-48 bg-gray-100">
               <img
