@@ -11,6 +11,8 @@ import {
 import NotFound from "./components/ui/NotFound";
 import Contact from "./components/ui/Contact";
 import Order from "./components/ui/Order";
+import Services from "./components/ui/Services";
+
 const Layout = () => {
   return (
     <div>
@@ -28,8 +30,14 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Hero />,
+        element: (
+          <>
+            <Hero />
+            <Services />
+          </>
+        ),
       },
+
       {
         path: "/cart",
         element: <Cart />,

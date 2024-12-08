@@ -1,7 +1,7 @@
 import { hero } from "../../assets/index";
 const HeroSection = () => {
   return (
-    <section className="py-48">
+    <section className="max-w-6xl mx-auto py-48">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
           <div className="space-y-6">
