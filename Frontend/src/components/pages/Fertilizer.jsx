@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { addToCart } from "../../redux/cartSlice";  // Assuming you have this action
+import { addToCart } from "../../redux/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 const Fertilizer = () => {
   const [fertilizers, setFertilizers] = useState([]);
@@ -20,16 +21,24 @@ const Fertilizer = () => {
       });
   }, []);
 
-
   const handleAddToCart = (fertilizer) => {
-    dispatch(addToCart({
-      _id: fertilizer._id,
-      title: fertilizer.name,  
-      image: fertilizer.images,
-      price: fertilizer.price,
-      quantity: 1,  
-      description: fertilizer.description,
-    }));
+    dispatch(
+      addToCart({
+        _id: fertilizer._id,
+        title: fertilizer.name,
+        image: fertilizer.images,
+        price: fertilizer.price,
+        quantity: 1,
+        description: fertilizer.description,
+      })
+    );
+    toast.success(`${fertilizer.name} added successfully!`, {
+      position: "bottom-right",
+      style: {
+        fontSize: "12px",
+        padding: "10px",
+      },
+    });
   };
 
   if (loading) {
@@ -70,10 +79,14 @@ const Fertilizer = () => {
               <h3 className="text-lg font-bold text-gray-800">
                 {fertilizer.name}
               </h3>
-              <p className="text-sm text-gray-500 mt-1">{fertilizer.description}</p>
-              <p className="text-lg font-bold text-price mt-2">₹ {fertilizer.price}</p>
+              <p className="text-sm text-gray-500 mt-1">
+                {fertilizer.description}
+              </p>
+              <p className="text-lg font-bold text-price mt-2">
+                ₹ {fertilizer.price}
+              </p>
               <button
-                onClick={() => handleAddToCart(fertilizer)}  // Only this fertilizer is added to cart
+                onClick={() => handleAddToCart(fertilizer)} // Only this fertilizer is added to cart
                 className="mt-4 px-5 py-2 bg-red-500 text-white rounded-full shadow-md hover:bg-green-500 transition-all duration-200 ease-in-out"
               >
                 Add to Cart
@@ -82,12 +95,23 @@ const Fertilizer = () => {
           </div>
         ))}
       </div>
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={true}
+        rtl={false}
+        pauseOnFocusLoss={true}
+        draggable={true}
+        pauseOnHover={true}
+        theme="dark"
+      />
     </div>
   );
 };
 
 export default Fertilizer;
-
 
 //! changing some ui if it is not need then this code is perfect, it will be use later
 // import { useEffect, useState } from "react";
