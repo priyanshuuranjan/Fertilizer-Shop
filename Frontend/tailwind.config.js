@@ -9,6 +9,7 @@ export default {
       },
       colors: {
         skyText: "#38bdf8",
+        price: '#32BDE8',
         redText: "#ef4444",
         whiteText: "#ffffff",
         darkText: '#1a202c'
