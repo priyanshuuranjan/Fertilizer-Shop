@@ -19,7 +19,7 @@ export const cartSlice = createSlice({
         state.productData.push(action.payload);
       }
     },
-    incrementQuantity: (state, action) => {
+    increamentQuantity: (state, action) => {
       const item = state.productData.find(
         (item) => item._id === action.payload._id
       );
@@ -60,7 +60,7 @@ export const {
   addToCart,
   deleteItem,
   resetCart,
-  incrementQuantity,
+  increamentQuantity,
   decrementQuantity,
   addUser,
   removeUser,
