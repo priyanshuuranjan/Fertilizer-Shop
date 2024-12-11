@@ -28,7 +28,7 @@ const CartItem = () => {
                   <MdOutlineClose
                     onClick={() =>
                       dispatch(deleteItem(item._id)) &
-                      toast.error(`${item.title} is removed`)
+                      toast.error(`₹ {item.title} is removed`)
                     }
                     className="text-xl text-gray-600 hover:text-red-600 cursor-pointer duration-300"
                   />
@@ -40,7 +40,7 @@ const CartItem = () => {
                 </div>
                 <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-5">
                   <h2 className="w-52">{item.title}</h2>
-                  <p className="w-10">${item.price}</p>
+                  <p className="w-10">₹{item.price}</p>
                   <div className="w-52 flex items-center justify-between text-gray-500 gap-4 border p-3">
                     <p className="text-sm">Quantity</p>
                     <div className="flex items-center gap-4 text-sm font-semibold">
@@ -81,7 +81,7 @@ const CartItem = () => {
                       </span>
                     </div>
                   </div>
-                  <p className="w-14">${item.quantity * item.price}</p>
+                  <p className="w-14">₹{item.quantity * item.price}</p>
                 </div>
               </div>
             ))}
