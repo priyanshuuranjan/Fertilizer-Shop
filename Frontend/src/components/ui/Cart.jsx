@@ -6,7 +6,9 @@ import CartItem from "./CartItem";
 
 const Cart = () => {
   const productData = useSelector((state) => state.cart.productData);
+  const userInfo = useSelector((state) => state.cart.userInfo);
   const [totalAmt, setTotalAmt] = useState("");
+  const [payNow, setPayNow] = useState(false);
 
   useEffect(() => {
     let price = 0;
@@ -16,6 +18,14 @@ const Cart = () => {
     });
     setTotalAmt(price.toFixed(2));
   }, [productData]);
+
+  const handleCheckout = () => {
+    if (userInfo) {
+      setPayNow(true);
+    } else {
+      toast.error("Please sign in to Checkout");
+    }
+  };
   return (
     <>
       <img
@@ -45,7 +55,10 @@ const Cart = () => {
           <p className="font-titleFont font-semibold flex justify-between mt-6">
             Total <span className="text-xl font-bold">₹ {totalAmt}</span>
           </p>
-          <button className="text-base bg-black text-white w-full rounded-md py-3 mt-6 hover:bg-gray-800 duration-300">
+          <button
+            onClick={handleCheckout}
+            className="text-base bg-black text-white w-full rounded-md py-3 mt-6 hover:bg-gray-800 duration-300"
+          >
             proceed to checkout
           </button>
         </div>
