@@ -44,11 +44,13 @@ const Header = () => {
               </span>
             </div>
           </Link>
-          <img
-            className="w-8 h-8 rounded-full"
-            src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-            alt="userlogo"
-          />
+          <Link to="/login">
+            <img
+              className="w-8 h-8 rounded-full"
+              src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+              alt="userlogo"
+            />
+          </Link>
         </div>
       </div>
     </div>

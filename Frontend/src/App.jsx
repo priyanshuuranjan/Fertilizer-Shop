@@ -18,6 +18,7 @@ import Pesticides from "./components/pages/Pesticides";
 import Herbicides from "./components/pages/Herbicides";
 import PlantNutrition from "./components/pages/PlantNutrition";
 import Equipment from "./components/pages/Equipment";
+import Login from "./components/pages/Login";
 
 const Layout = () => {
   return (
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/contact",
