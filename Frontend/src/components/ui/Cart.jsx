@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import { Link, Navigate } from "react-router-dom";
 import CartItem from "./CartItem";
+import StripeCheckout from "react-stripe-checkout"
 
 const Cart = () => {
   const productData = useSelector((state) => state.cart.productData);
@@ -61,6 +62,20 @@ const Cart = () => {
           >
             proceed to checkout
           </button>
+          {payNow && (
+            <div>
+              <StripeCheckout
+              
+              stripeKey=""
+              name="Kumar Fertilizer Shop"
+              amount={totalAmt * 100}
+              label="Pay to Kumar Fertilizer Shop"
+              description={`Your Payment amount is $${totalAmt}`}
+              token={payment}
+              email={userInfo.email}
+              />
+            </div>
+          )}
         </div>
       </div>
       <ToastContainer

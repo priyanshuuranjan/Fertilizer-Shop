@@ -2,6 +2,7 @@ import { MdOutlineClose } from "react-icons/md";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
   decrementQuantity,
   deleteItem,
