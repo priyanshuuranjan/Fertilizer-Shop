@@ -3,12 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   productData: [],
   userInfo: null,
+  orderData: null,  // Add orderData in the initial state
 };
 
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    // Cart actions
     addToCart: (state, action) => {
       const item = state.productData.find(
         (item) => item._id === action.payload._id
@@ -45,14 +47,20 @@ export const cartSlice = createSlice({
     resetCart: (state) => {
       state.productData = [];
     },
-    // =============== User Start here ==============
+    // User actions
     addUser: (state, action) => {
       state.userInfo = action.payload;
     },
     removeUser: (state) => {
       state.userInfo = null;
     },
-    // =============== User End here ================
+    // Order actions
+    setOrderData: (state, action) => {
+      state.orderData = action.payload;  // Save the order data
+    },
+    clearOrderData: (state) => {
+      state.orderData = null;  // Clear the order data after it's processed
+    },
   },
 });
 
@@ -64,6 +72,8 @@ export const {
   decrementQuantity,
   addUser,
   removeUser,
+  setOrderData,
+  clearOrderData,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
