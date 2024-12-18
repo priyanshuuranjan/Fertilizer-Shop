@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-
 const Order = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     const savedOrders = JSON.parse(localStorage.getItem("orders")) || [];
-    console.log(savedOrders); // Log orders to check their structure
-    // Sort orders by most recent
+    console.log(savedOrders); 
     const sortedOrders = savedOrders.sort(
       (a, b) => new Date(b.orderDate) - new Date(a.orderDate)
     );

@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
-import { resetCart } from "../../redux/cartSlice";  // Imported resetCart action
-import CheckoutPopup from "./CheckoutPopup";  // Imported CheckoutPopup
+import { resetCart } from "../../redux/cartSlice";
+import CheckoutPopup from "./CheckoutPopup";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -14,40 +14,40 @@ const Cart = () => {
   const userInfo = useSelector((state) => state.cart.userInfo);
 
   const [totalAmt, setTotalAmt] = useState("");
-  const [loading, setLoading] = useState(false);  // Added state for loading animation
-  const [showPopup, setShowPopup] = useState(false);  // State to control the popup visibility
-  const [showPopupLoading, setShowPopupLoading] = useState(false);  // State for 2 seconds popup loading
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [showPopupLoading, setShowPopupLoading] = useState(false);
 
   useEffect(() => {
     let price = 0;
     productData.forEach((item) => {
       price += item.price * item.quantity;
     });
-    setTotalAmt(price.toFixed(2));  // Set the total amount
+    setTotalAmt(price.toFixed(2));
   }, [productData]);
 
   const handleCheckout = () => {
     if (userInfo) {
-      setShowPopupLoading(true);  // Show 2 seconds loading state
+      setShowPopupLoading(true);
       setTimeout(() => {
-        setShowPopupLoading(false);  // Hide 2 seconds loading
-        setShowPopup(true);  // Show the checkout popup
-      }, 2000);  // Wait for 2 seconds before showing the popup
+        setShowPopupLoading(false);
+        setShowPopup(true);
+      }, 2000);
     } else {
-      toast.error('Please sign in to Checkout');  // Show error if user is not logged in
+      toast.error("Please sign in to Checkout");
     }
   };
 
   const closePopup = () => {
-    setShowPopup(false);  // Close the popup when called
+    setShowPopup(false);
   };
 
   const handlePayment = () => {
-    setLoading(true);  // Start loading when user clicks Proceed to Pay
+    setLoading(true);
     setTimeout(() => {
-      dispatch(resetCart());  // Reset the cart
-      navigate("/order");  // Navigate to the order page
-      setLoading(false);  // Stop loading
+      dispatch(resetCart());
+      navigate("/order");
+      setLoading(false);
     }, 3000);
   };
 
@@ -72,7 +72,8 @@ const Cart = () => {
             <p className="flex items-start gap-4 text-base">
               Shipping{" "}
               <span>
-                You're just one step away from completing your order. Let's make it happen!
+                You're just one step away from completing your order. Let's make
+                it happen!
               </span>
             </p>
           </div>
@@ -80,23 +81,27 @@ const Cart = () => {
             Total <span className="text-xl font-bold">₹ {totalAmt}</span>
           </p>
           <button
-            onClick={handleCheckout}  // Trigger the checkout popup with 2 seconds loading
-            className={`text-base bg-black text-white w-full rounded-md py-3 mt-6 hover:bg-gray-800 duration-300 ${loading || showPopupLoading ? "cursor-not-allowed opacity-50" : ""}`}
-            disabled={loading || showPopupLoading}  // Disable button during loading
+            onClick={handleCheckout}
+            className={`text-base bg-black text-white w-full rounded-md py-3 mt-6 hover:bg-gray-800 duration-300 ${
+              loading || showPopupLoading ? "cursor-not-allowed opacity-50" : ""
+            }`}
+            disabled={loading || showPopupLoading}
           >
-            {showPopupLoading ? "Loading..." : loading ? "Processing..." : "Proceed to checkout"}
+            {showPopupLoading
+              ? "Loading..."
+              : loading
+              ? "Processing..."
+              : "Proceed to checkout"}
           </button>
         </div>
       </div>
-
-      {/* Checkout Popup */}
       {showPopup && (
         <CheckoutPopup
           closePopup={closePopup}
           user={userInfo}
           totalAmt={totalAmt}
-          handlePayment={handlePayment}  // Pass handlePayment to CheckoutPopup
-          loading={loading}  // Pass loading state for spinner
+          handlePayment={handlePayment}
+          loading={loading}
         />
       )}
 
