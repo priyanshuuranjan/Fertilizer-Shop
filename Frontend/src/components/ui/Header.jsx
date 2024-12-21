@@ -7,6 +7,9 @@ const Header = () => {
   const productData = useSelector((state) => state.cart.productData);
   const userInfo = useSelector((state) => state.cart.userInfo);
   const [menuOpen, setMenuOpen] = useState(false);
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // }, []);
 
   return (
     <div className="w-full h-16 bg-gray-800 text-white shadow-md sticky top-0 z-50">
@@ -74,7 +77,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center">
           <FiMenu
             className="text-2xl text-gray-200 cursor-pointer"
