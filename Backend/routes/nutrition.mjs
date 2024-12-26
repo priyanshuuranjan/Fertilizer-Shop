@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { nutrition } from "../constants/index.mjs";
+import { nutrition } from "../constants/api.mjs";
 
 const router = Router();
 

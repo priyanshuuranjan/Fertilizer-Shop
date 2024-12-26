@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { herbicide } from "../constants/index.mjs";
+import { herbicide } from "../constants/api.mjs";
 
 const router = Router();
 

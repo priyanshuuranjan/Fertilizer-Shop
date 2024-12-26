@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { equipment } from "../constants/index.mjs";
+import { equipment } from "../constants/api.mjs";
 
 const router = Router();
 

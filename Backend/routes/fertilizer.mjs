@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { fertilizer } from "../constants/index.mjs";
+import { fertilizer } from "../constants/api.mjs";
 
 const router = Router();
 

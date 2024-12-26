@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { seed } from "../constants/index.mjs";
+import { seed } from "../constants/api.mjs";
 
 const router = Router();
 
