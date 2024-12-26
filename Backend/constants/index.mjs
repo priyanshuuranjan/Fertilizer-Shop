@@ -164,7 +164,7 @@ export const equiData = [
     isStock: true,
   },
 ];
-export const herbidata= [
+export const herbiData= [
   {
     _id: "11",
     name: "Saathi",
