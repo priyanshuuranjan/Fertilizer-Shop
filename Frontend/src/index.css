@@ -3,5 +3,14 @@
 @tailwind utilities;
 
 html {
-    @apply scroll-smooth;
-  }
+  @apply scroll-smooth;
+}
+
+body {
+  @apply h-full overflow-x-hidden; /* Hide horizontal scrollbar */
+}
+
+/* Optional: Force vertical scrollbar even when not needed */
+body {
+  @apply overflow-y-scroll; /* Always show vertical scrollbar */
+}
