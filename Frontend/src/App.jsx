@@ -1,3 +1,4 @@
+import  { useEffect } from "react";
 import Header from "./components/ui/Header";
 import Hero from "./components/ui/Hero";
 import Footer from "./components/ui/Footer";
@@ -6,7 +7,6 @@ import {
   createBrowserRouter,
   Outlet,
   RouterProvider,
-  ScrollRestoration,
 } from "react-router-dom";
 import NotFound from "./components/ui/NotFound";
 import Contact from "./components/ui/Contact";
@@ -22,6 +22,10 @@ import Seed from "./components/pages/Seeds";
 
 
 const Layout = () => {
+  useEffect(() => {
+    // Scroll to the top with smooth behavior when component is mounted
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div>
       <Header />

@@ -4,12 +4,12 @@ const Order = () => {
 
   useEffect(() => {
     const savedOrders = JSON.parse(localStorage.getItem("orders")) || [];
-    console.log(savedOrders); 
+    console.log(savedOrders);
     const sortedOrders = savedOrders.sort(
       (a, b) => new Date(b.orderDate) - new Date(a.orderDate)
     );
-
     setOrders(sortedOrders);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   return (
