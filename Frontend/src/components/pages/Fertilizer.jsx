@@ -11,6 +11,7 @@ const Fertilizer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(() => {
       fetchFertilizerData();
     }, 2000);

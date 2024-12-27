@@ -11,6 +11,7 @@ const Nutrition = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(() => {
       fetchNutritionData();
     }, 2000);
@@ -18,7 +19,9 @@ const Nutrition = () => {
 
   const fetchNutritionData = async () => {
     try {
-      const response = await fetch("https://kumarfertilizer-api.vercel.app/nutrition");
+      const response = await fetch(
+        "https://kumarfertilizer-api.vercel.app/nutrition"
+      );
       if (!response.ok) throw new Error("Failed to fetch data");
       const data = await response.json();
       setNutrition(data);
@@ -100,7 +103,9 @@ const Nutrition = () => {
             <div className="p-4 text-center">
               <h3 className="text-lg font-bold text-gray-800">{item.name}</h3>
               <p className="text-sm text-gray-500 mt-1">{item.description}</p>
-              <p className="text-lg font-bold text-price mt-2">₹ {item.price}</p>
+              <p className="text-lg font-bold text-price mt-2">
+                ₹ {item.price}
+              </p>
               <button
                 onClick={() => handleAddToCart(item)} // Add this item to cart
                 className="mt-4 px-5 py-2 bg-red-500 text-white rounded-full shadow-md hover:bg-green-500 transition-all duration-200 ease-in-out"

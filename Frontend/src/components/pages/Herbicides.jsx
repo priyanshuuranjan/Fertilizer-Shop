@@ -11,6 +11,7 @@ const Herbicide = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     fetch("https://kumarfertilizer-api.vercel.app/herbicide")
       .then((response) => response.json())
       .then((data) => {

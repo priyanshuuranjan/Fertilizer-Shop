@@ -11,6 +11,7 @@ const Pesticide = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(() => {
       fetch("https://kumarfertilizer-api.vercel.app/pesticide")
         .then((response) => response.json())
@@ -23,7 +24,7 @@ const Pesticide = () => {
           setFetchError(true);
           setLoading(false);
         });
-    }, 2000); // 3-second delay
+    }, 2000); 
   }, []);
 
   const handleAddToCart = (pesticide) => {

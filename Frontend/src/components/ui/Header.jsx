@@ -1,15 +1,15 @@
 import { FiShoppingBag, FiMenu } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const Header = () => {
   const productData = useSelector((state) => state.cart.productData);
   const userInfo = useSelector((state) => state.cart.userInfo);
   const [menuOpen, setMenuOpen] = useState(false);
-  // useEffect(() => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <div className="w-full h-16 bg-gray-800 text-white shadow-md sticky top-0 z-50">
