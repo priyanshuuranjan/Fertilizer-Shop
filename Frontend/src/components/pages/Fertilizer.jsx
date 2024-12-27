@@ -9,7 +9,7 @@ const Fertilizer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("https://kf-api.vercel.app/fertilizer")
+    fetch("https://kumarfertilizer-api.vercel.app/fertilizer")
       .then((response) => response.json())
       .then((data) => {
         setFertilizers(data);
