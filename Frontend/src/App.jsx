@@ -13,12 +13,13 @@ import Contact from "./components/ui/Contact";
 import Order from "./components/ui/Order";
 import Services from "./components/ui/Services";
 import Fertilizer from "./components/pages/Fertilizer";
-import Vegetable from "./components/pages/Vegetable";
 import Pesticides from "./components/pages/Pesticides";
 import Herbicides from "./components/pages/Herbicides";
-import PlantNutrition from "./components/pages/PlantNutrition";
+import Nutrition from "./components/pages/Nutrition";
 import Equipment from "./components/pages/Equipment";
 import Login from "./components/pages/Login";
+import Seed from "./components/pages/Seeds";
+
 
 const Layout = () => {
   return (
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/seeds",
-        element: <Vegetable />,
+        element: <Seed />,
       },
       {
         path: "/pesticides",
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/nutrition",
-        element: <PlantNutrition />,
+        element: <Nutrition />,
       },
 
       {
