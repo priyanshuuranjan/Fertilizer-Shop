@@ -9,7 +9,7 @@ The application is designed to provide a seamless shopping experience with secur
 
 ## 📂 Project Structure 📂🔍🧩
 
-```
+
 priyanshuuranjan-Fertilizer-Shop/
 ├── LICENSE
 ├── Backend/
@@ -155,15 +155,6 @@ priyanshuuranjan-Fertilizer-Shop/
 - **pages/**: Individual pages for different product categories.
 - **redux/**: State management using Redux Toolkit.
 
----
-
-## 📷 Screenshots 📸✨📊
-
-- **Home Page**
-- **Product Page**
-- **Cart Page**
-
----
 
 ## 🔧 Environment Variables ⚙️🔑📁
 
@@ -187,14 +178,6 @@ STRIPE_SECRET_KEY=your_stripe_secret_key
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
----
-
-## 👨‍💻 Author ✍️🧑‍💻🌟
-
-**Priyanshu Ranjan**
-
----
-
 ## 🤝 Contributions 🧑‍🤝‍🧑💻📋
 
 Contributions, issues, and feature requests are welcome! 🤗💡🛠️  
@@ -212,7 +195,7 @@ For any inquiries, please reach out via:
 
 ## 🌐 Live Demo 🚀🌐📲
 
-The project is deployed on **Vercel**. Check it out [here](#).
+The project is deployed on **Vercel**. Check it out [here](https://kumarfertilizer.vercel.app/).
 
 ---
 
